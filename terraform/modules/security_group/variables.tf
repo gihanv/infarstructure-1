@@ -1,10 +1,10 @@
-variable lb_sg_name_lb {
+variable sg_name_public {
   type = string
 }
-variable lb_sg_name_ec2 {
+variable sg_name_private {
 type = string
 }
-variable lb_vpc_id {
+variable sg_vpc_id {
   type = string
 }
 
@@ -14,7 +14,7 @@ variable "all_tags" {
   default     = {}
 }
 
-variable "alb_tags" {
+variable "sg_public_tags" {
   description = "A map of tags to add to all resources"
   type        = map(any)
   default     = {
@@ -22,16 +22,13 @@ variable "alb_tags" {
   }
 }
 
-
-variable "ec2_tags" {
+variable "sg_private_tags" {
   description = "A map of tags to add to all resources"
   type        = map(any)
   default     = {
     Apply = "private"
   }
 }
-
-
 
 
 

@@ -11,7 +11,7 @@ module "asc" {
   asg_desired_capacity        = local.desired_capacity
   asg_max_size                = local.max_size
   asg_min_size                = local.min_size
-
+  asg_lb_tg_arn               = local.lb_arn
 
 
 

@@ -22,7 +22,7 @@ variable "asg_name" {
 
 }
 
-variable asg_launch_template_version{
+variable "asg_launch_template_version" {
   type        = string
   description = "sg_launch_template_version"
 
@@ -48,13 +48,8 @@ variable "asg_min_size" {
   default     = 1
 }
 
-# variable "asg_instance_type" {
-#   type        = string
-#   description = "The type of the instance."
+variable "asg_lb_tg_arn" {
+  type    = string
+  default = "arn:aws:elasticloadbalancing:us-east-1:724866671659:targetgroup/bestseller-autoscale-tg/f9490f7a85b66513"
+}
 
-# }
-# variable "asg_image_id" {
-#   type        = string
-#   description = " The AMI that can used to launch the instance"
-
-# }

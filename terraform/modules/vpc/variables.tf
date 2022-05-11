@@ -104,19 +104,19 @@ variable "all_tags" {
   default     = {}
 }
 
-variable private_route_table_tags{
+variable "private_route_table_tags" {
   description = "A map of tags to add to all resources"
   type        = map(any)
   default     = {}
 }
 
-variable public_route_table_tags{
+variable "public_route_table_tags" {
   description = "A map of tags to add to all resources"
   type        = map(any)
   default     = {}
 }
 
-variable igw_tags{
+variable "igw_tags" {
   description = "A map of tags to add to all resources"
   type        = map(any)
   default     = {}

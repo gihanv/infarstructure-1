@@ -29,25 +29,25 @@ module "vpc_test" {
     Vpc_Type = "Bestseller-Noneprod"
   }
 
-  nat_eip_tags ={
-      Name= "Bestseller-NG-Ip"
+  nat_eip_tags = {
+    Name = "Bestseller-NG-Ip"
   }
 
-  private_route_table_tags={
-      Name= "Bestseller-Pvt-RT"
+  private_route_table_tags = {
+    Name = "Bestseller-Pvt-RT"
   }
 
-public_route_table_tags={
-      Name= "Bestseller-Pub-RT"
+  public_route_table_tags = {
+    Name = "Bestseller-Pub-RT"
   }
 
 
- igw_tags ={
-      Name= "Bestseller-IG-Ip"
+  igw_tags = {
+    Name = "Bestseller-IG-Ip"
   }
 
-   nat_gateway_tags ={
-      Name= "Bestseller-NG"
+  nat_gateway_tags = {
+    Name = "Bestseller-NG"
   }
 
 

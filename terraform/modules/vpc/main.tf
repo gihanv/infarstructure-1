@@ -19,18 +19,23 @@ resource "aws_internet_gateway" "this" {
   tags = merge(tomap({ "Name" = format("%s", var.name) }),
     var.all_tags,
   var.igw_tags)
+
 }
 
 # Publiс routes
 
 resource "aws_route_table" "public" {
-  count = length(var.public_subnets) > 0 ? 1 : 0
+  count = length(var.public_subnets) > 0 ? 2 : 0
 
   vpc_id = aws_vpc.this.id
 
   tags = merge(tomap({ "Name" = format("%s-${var.public_subnet_suffix}", var.name) }),
     var.all_tags,
   var.public_route_table_tags)
+
+  timeouts {
+    create = "5m"
+  }
 }
 
 resource "aws_route" "public_internet_gateway" {

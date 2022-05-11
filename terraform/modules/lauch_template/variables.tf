@@ -1,6 +1,6 @@
 variable "lt_vpc_id" {
   type        = string
-  description = "pvt sg name "
+  description = "VPC id "
 }
 variable "lt_name" {
   type        = string
@@ -86,6 +86,21 @@ variable "lt_user_data" {
   description = "user data for install nginx and aws cli"
 
 }
+
+
+variable "lt_sg_pvt_name" {
+  type        = string
+  description = "private security group name"
+  default = "sg_private_ec2"
+}
+
+variable "lt_pvt_subnet" {
+  type        = string
+  description = "Private Subnet name"
+  default = "bestseller-dev-priv-us-east-1a"
+}
+
+
 
 
 

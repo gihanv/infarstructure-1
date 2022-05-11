@@ -1,8 +1,8 @@
 
 module "lauch_template" {
 
-  source = "../../../terraform/modules/lauch_template/"
-  lt_vpc_id                               = local.lt_vpc_id                          
+  source                                  = "../../../terraform/modules/lauch_template/"
+  lt_vpc_id                               = local.lt_vpc_id
   lt_iam_instance_profile                 = local.aim_profile_name
   lt_name                                 = local.launch_template_name
   lt_ebs_path                             = "/dev/sda1"

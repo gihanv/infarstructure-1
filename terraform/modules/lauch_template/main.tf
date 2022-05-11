@@ -1,3 +1,23 @@
+data "aws_subnet" "private" {
+  filter   {
+    name = "tag:Name"
+    values = ["bestseller-dev-priv-us-east-1a"]
+  }
+}
+
+data "aws_security_groups" "lt" {
+  filter {
+    name   = "group-name"
+    values = [var.lt_sg_pvt_name]
+  }
+
+  filter {
+    name   = "vpc-id"
+    values = [var.lt_vpc_id]
+  }
+}
+
+
 resource "aws_iam_policy" "bucket_policy" {
   name = var.lt_am_policy
   path = "/"
@@ -89,15 +109,13 @@ resource "aws_launch_template" "auto" {
     enabled = true
   }
   network_interfaces {
-    #associate_public_ip_address = var.lt_public_ip
-    associate_public_ip_address = true
+    associate_public_ip_address = var.lt_public_ip
+    security_groups = data.aws_security_groups.lt.ids
+    subnet_id = data.aws_subnet.private.id
+
   }
 
-#security_group_names  = [data.aws_security_groups.test.ids[0],data.aws_security_groups.test.ids[0]]
 
-  #vpc_security_group_ids = [data.aws_security_groups.test.ids[0]]
-  #vpc_security_group_ids = [data.aws_security_groups.test.ids[0], data.aws_security_groups.test.ids[1]]
-  #vpc_security_group_ids = ["sg-05d67a19d8e2e618b"]
 
   tag_specifications {
     resource_type = "instance"

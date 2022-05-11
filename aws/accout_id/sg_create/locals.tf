@@ -1,8 +1,8 @@
 locals {
 
-  region   = "us-east-1"
-  vpc_id   = "vpc-0774b5a6311a56ddb"
-
+  region = "us-east-1"
+  vpc_id = "vpc-0092ae19a46988170"
+  alb_arn = "234"
 
   resource_tags = {
     "CreateFor" = "ALBTest"

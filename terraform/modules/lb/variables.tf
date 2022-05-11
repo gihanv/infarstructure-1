@@ -12,7 +12,7 @@ variable "lb_vpc_id" {
 
 variable "lb_sg_name_alb" {
   type        = string
-  default     = "null"
+  default     = "sg_alb"
   description = "ALB security group name"
 
 }
