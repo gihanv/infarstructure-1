@@ -32,16 +32,7 @@ variable "ec2_tags" {
 }
 
 
-variable "lt_instance_type" {
-  type        = string
-  description = "The type of the instance."
 
-}
-variable "lt_image_id" {
-  type        = string
-  description = " The AMI that can used to launch the instance"
-
-}
 
 
 
