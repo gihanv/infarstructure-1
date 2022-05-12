@@ -12,7 +12,7 @@ module "lauch_template" {
   lt_instance_type                        = local.instance_type
   lt_image_id                             = local.instance_id
   lt_instance_initiated_shutdown_behavior = local.shutdown_behavior
-  lt_public_ip                            = "false"
+  lt_public_ip                            = "true"
   lt_key_name                             = local.key_name
   lt_user_data                            = filebase64("${path.module}/data/UserData.sh")
   all_tags                                = merge(local.resource_tags, local.default_tags)
