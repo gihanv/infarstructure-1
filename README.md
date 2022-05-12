@@ -38,3 +38,6 @@ aws cli
 * 5. aws/accout_idlb_for_asg -> and  terrafrom init-> terrafrom plan -> terrafrom apply | chage the backend.tf s3 state path | Provide WAS variable (ex.tags) 
 * 6. aws/accout_id/al-> and  terrafrom init-> terrafrom plan -> terrafrom apply | chage the backend.tf s3 state path | Provide WAS variable (ex.tags) 
 
+
+
+![image](https://user-images.githubusercontent.com/29304495/168034105-04091c39-9a2c-45bc-9d8a-c09d9b441782.png)
