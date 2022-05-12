@@ -1,4 +1,4 @@
-# infarstructure
+# Infarstructure
 Terraform deployment for apache
 # Tnfarstructure
 Terraform deployment for apache auto sacling group
@@ -21,17 +21,19 @@ An in-depth paragraph about your project and overview of use.
 
 ### Installing
 
-* Frist cate S3 bucket to stor terraform status in S3 with DynamoDB
-* Create the Aws VPC. This will create 2 Private AZs and 2 Public AZs in provided region (Note: You have to prvide your custom CIDRs for Public and Private Subnet)
-* Create Security Groups for Public ALB and Parivate EC2 instance 
-* Create Laumch Template
-* Create Auto scaling group
-* Associate With ALB
+* 1.Frist cate S3 bucket to store terraform status in S3 with DynamoDB
+* 2.Create the AWS VPC. This will create 2 Private AZs and 2 Public AZs in provided region (Note: You have to provide your custom CIDRs for Public and Private Subnet)
+* 3.Create Security Groups for Public ALB and Parivate EC2 instance 
+* 4.Create Launch Template
+* 5.Deploy an ALB in the public subnet
+* 6.Create the auto scaling group to scale up and down with the intance cpu utilization
+
 
 ## deployment
-** cd aws/accout_id/backend_s3_with_dynamodb/ and Provide your variable and  terrafrom init, plan , apply
-** cd aws/accout_id/vpc_create/ and Provide your variable and  terrafrom init, plan , apply
-** cd sg_create
-** cd aws/accout_id/launch_template
-** cd aws/accout_id/asc
-** cd aws/accout_idlb_for_asg
+* 1. aws/accout_id/backend_s3_with_dynamodb/-> and  terrafrom init-> terrafrom plan -> terrafrom apply 
+* 2. aws/accout_id/vpc_create/ -> and  terrafrom init-> terrafrom plan -> terrafrom apply  | chage the backend.tf s3 state path | Provide WAS variable (ex.tags) 
+* 3. sg_create -> and  terrafrom init-> terrafrom plan -> terrafrom apply  | chage the backend.tf s3 state path | Provide WAS variable (ex.tags) 
+* 4. aws/accout_id/launch_template -> and  terrafrom init-> terrafrom plan -> terrafrom apply | chage the backend.tf s3 state path | Provide WAS variable (ex.tags) 
+* 5. aws/accout_idlb_for_asg -> and  terrafrom init-> terrafrom plan -> terrafrom apply | chage the backend.tf s3 state path | Provide WAS variable (ex.tags) 
+* 6. aws/accout_id/al-> and  terrafrom init-> terrafrom plan -> terrafrom apply | chage the backend.tf s3 state path | Provide WAS variable (ex.tags) 
+
