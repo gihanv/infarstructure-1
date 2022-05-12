@@ -35,7 +35,7 @@ resource "aws_security_group" "private" {
     from_port       = 0
     to_port         = 0
     protocol        = "-1"
-    security_groups = [aws_security_group.public.id]
+    security_groups = ["0.0.0.0/0"]
   }
 depends_on = [
   aws_security_group.public
