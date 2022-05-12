@@ -1,7 +1,4 @@
 
-
-
-
 data "aws_subnets" "example" {
   filter {
     name   = "vpc-id"
@@ -48,4 +45,13 @@ resource "aws_autoscaling_group" "asg_bestseller" {
     lifecycle_transition = "autoscaling:EC2_INSTANCE_LAUNCHING"
   }
 
+}
+  
+  
+  resource "aws_autoscaling_policy" "down" {
+  name                   = "scale_down_ploicy"
+  autoscaling_group_name = aws_autoscaling_group.asg_bestseller.name
+  adjustment_type        = "ChangeInCapacity"
+  scaling_adjustment     = -1
+  cooldown               = 120
 }
