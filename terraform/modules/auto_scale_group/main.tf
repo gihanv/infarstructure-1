@@ -63,3 +63,40 @@ resource "aws_autoscaling_group" "asg_bestseller" {
   scaling_adjustment     = 1
   cooldown               = 120
 }
+  
+  
+  
+resource "aws_cloudwatch_metric_alarm" "alerm_down" {
+  alarm_description   = "Monitors CPU utilization for Terramino ASG"
+  alarm_actions       = [aws_autoscaling_policy.down.arn]
+  alarm_name          = "Bestseller_apache_scale_down"
+  comparison_operator = "LessThanThreshold"
+  namespace           = "AWS/EC2"
+  metric_name         = "CPUUtilization"
+  threshold           = "60"
+  evaluation_periods  = "2"
+  period              = "120"
+  statistic           = "Average"
+
+  dimensions = {
+    AutoScalingGroupName = aws_autoscaling_group.asg_bestseller.name
+  }
+}
+
+
+resource "aws_cloudwatch_metric_alarm" "alerm_up" {
+  alarm_description   = "Monitors CPU utilization for Terramino ASG"
+  alarm_actions       = [aws_autoscaling_policy.up.arn]
+  alarm_name          = "Bestseller_apache_scale_up"
+  comparison_operator = "GreaterThanThreshold"
+  namespace           = "AWS/EC2"
+  metric_name         = "CPUUtilization"
+  threshold           = "80"
+  evaluation_periods  = "2"
+  period              = "120"
+  statistic           = "Average"
+
+  dimensions = {
+    AutoScalingGroupName = aws_autoscaling_group.asg_bestseller.name
+  }
+}
