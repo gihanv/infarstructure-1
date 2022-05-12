@@ -4,8 +4,8 @@ Terraform deployment for apache
 Terraform deployment for apache auto sacling group
 
 ## Tools Needs
-Terraform>=0.13
-aws cli
+### Terraform>=0.13
+### aws cli
 
 
 ## Getting Started
