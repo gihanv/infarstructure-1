@@ -1,16 +1,16 @@
 # Infarstructure
 Terraform deployment for apache
 # Module
-Terraform deployment for apache auto sacling group
+Terraform deployment for apache auto-scaling group.
 
-## Tools Needs
+## Tools 
 ### Terraform>=0.13
 ### aws cli
 
 
 ## Getting Started
 
-### Teraform Moudles I have used
+### Teraform Moudles wich  I have used
 
 * VPC
 * DynamoDB
@@ -22,12 +22,12 @@ Terraform deployment for apache auto sacling group
 
 ### Installing
 
-* 1.Frist create S3 bucket to store terraform status in S3 with DynamoDB
-* 2.Create the AWS VPC. This will create 2 Private AZs and 2 Public AZs in provided region (Note: You have to provide your custom CIDRs for Public and Private Subnets)
-* 3.Create Security Groups for Public ALB and Parivate EC2 instance 
-* 4.Create Launch Template
-* 5.Deploy an ALB in the public subnet
-* 6.Create the auto scaling group to scale up and down with the intance cpu utilization
+* 1. Frist create an S3 bucket to store terraform status in S3 with DynamoDB
+* 2. Create the AWS VPC. This will create 2 Private AZs and 2 Public AZs in the provided region (Note: You have to provide your custom CIDRs for Public and Private Subnets)
+* 3. Create Security Groups for Public ALB and Private EC2 instance 
+* 4. Create Launch Template
+* 5. Deploy an ALB in the public subnet
+* 6.Create the auto-scaling group to scale up and down with the instance CPU utilization
 
 
 ## deployment
